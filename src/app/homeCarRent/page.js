@@ -74,9 +74,14 @@ export default function HomeCarRent() {
       {/*=== HEADER ===*/}
 
       {/* BODY */}
-      <div className="mx-16">
+      <div className="mx-16 h-screen overflow-auto no-scrollbar">
         <div className="p-5 text-[#90A3BF] font-4">Popular Cars</div>
-        <CarCard />
+        <div className="grid gap-4 grid-cols-3">
+          <CarCard />
+          <CarCard />
+          <CarCard />
+          <CarCard />
+        </div>
       </div>
       {/*=== BODY ===*/}
     </div>
