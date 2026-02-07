@@ -5,7 +5,7 @@ import {
   BellIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/solid";
-
+import CarCard from "@/components/CarCard";
 export default function HomeCarRent() {
   return (
     <div className="w-full h-[100vh] bg-[#F6F7F9]">
@@ -74,7 +74,10 @@ export default function HomeCarRent() {
       {/*=== HEADER ===*/}
 
       {/* BODY */}
-      <div className="">body</div>
+      <div className="mx-16">
+        <div className="p-5 text-[#90A3BF] font-4">Popular Cars</div>
+        <CarCard />
+      </div>
       {/*=== BODY ===*/}
     </div>
   );
