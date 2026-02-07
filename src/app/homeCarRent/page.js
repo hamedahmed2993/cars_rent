@@ -10,41 +10,48 @@ export default function HomeCarRent() {
   return (
     <div className="w-full h-[100vh] bg-[#F6F7F9]">
       {/* HEADER */}
-      <div className="relative bg-white w-full h-[124px]">
-        {/* TITLE */}
-        <div className="absolute left-[60px] top-[40px] w-[148px] h-[44px] ">
-          <div
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            className="text-[#3563E9] text-4xl font-bold"
-          >
-            MORENT
+      <div className="bg-white w-full h-[124px] flex items-center justify-between px-[20px]">
+        {/* TITLE + SEARCH BAR */}
+        <div
+          className="flex 
+        flex-col sm:flex-row sm:items-center sm:justify-between sm:gap-[50px]"
+        >
+          {/* TITLE */}
+          <div className="w-[148px] h-[44px] ">
+            <div
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+              className="text-[#3563E9] text-4xl font-bold"
+            >
+              MORENT
+            </div>
           </div>
-        </div>
-        {/*=== TITLE ===*/}
+          {/*=== TITLE ===*/}
 
-        {/* SEARCH BAR */}
-        <div className="text-[#596780] absolute left-[272px] top-[40px] w-[492px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-between px-6">
-          <div
-            className="flex"
-            style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-          >
-            <MagnifyingGlassIcon className="w-[25px] h-[25px] " />
-            Search something here
+          {/* SEARCH BAR */}
+          <div className="text-[#596780] w-[492px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-between px-6">
+            <div
+              className="flex"
+              style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+            >
+              <MagnifyingGlassIcon className="w-[25px] h-[25px] " />
+              Search something here
+            </div>
+            <AdjustmentsHorizontalIcon className="w-[25px] h-[25px] " />
           </div>
-          <AdjustmentsHorizontalIcon className="w-[25px] h-[25px] " />
+          {/*=== SEARCH BAR ===*/}
         </div>
-        {/*=== SEARCH BAR ===*/}
+        {/*=== TITLE + SEARCH BAR ===*/}
 
         {/* OPTIONS */}
-        <div className="text-[#596780] w-[236px] h-[44px] absolute top-[40px] left-[1172px] flex items-center justify-between">
+        <div className="text-[#596780] w-[236px] h-[44px] flex items-center justify-between">
           {/* FAVORITE */}
-          <div className="w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center">
+          <div className="invisible md:visible w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center">
             <HeartIcon className="w-[24px] h-[24px]" />
           </div>
           {/*=== FAVORITE ===*/}
 
           {/* NOTIFICATION */}
-          <div className=" relative w-[44px] h-[44px] border border-[#C3D4E9] rounded-full ">
+          <div className="invisible md:visible relative w-[44px] h-[44px] border border-[#C3D4E9] rounded-full ">
             <div className="flex items-center justify-center w-full h-full">
               <BellIcon className="w-[24px] h-[24px]" />
             </div>
@@ -54,7 +61,7 @@ export default function HomeCarRent() {
           {/*=== NOTIFICATION ===*/}
 
           {/* SETTINGS */}
-          <div className="w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center">
+          <div className="invisible md:visible w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center">
             <Cog6ToothIcon className="w-[24px] h-[24px]" />
           </div>
           {/*=== SETTINGS ===*/}
