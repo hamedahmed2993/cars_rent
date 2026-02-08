@@ -1,3 +1,7 @@
+"use client";
+
+import { useDispatch, useSelector } from "react-redux";
+import { updateSearchField } from "@/lib/features/filters/filtersSlice";
 import {
   MagnifyingGlassIcon,
   AdjustmentsHorizontalIcon,
@@ -7,6 +11,8 @@ import {
 } from "@heroicons/react/24/solid";
 
 export default function HeaderDesktop() {
+  const searchField = useSelector((state) => state.filters.searchField);
+  const dispatch = useDispatch();
   return (
     <div className="bg-white w-full h-[124px] flex items-center justify-between px-[20px]">
       {/* TITLE + SEARCH BAR */}
@@ -29,11 +35,19 @@ export default function HeaderDesktop() {
         {/* SEARCH BAR */}
         <div className="text-[#596780] w-[492px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-between px-6">
           <div
-            className="flex"
+            className="flex w-full"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             <MagnifyingGlassIcon className="w-[25px] h-[25px] " />
-            Search something here
+            <input
+              type="text"
+              placeholder="Search something here"
+              className="ml-[10px] w-full border-none outline-none"
+              value={searchField || ""}
+              onChange={(e) => {
+                dispatch(updateSearchField(e.target.value));
+              }}
+            ></input>
           </div>
           <AdjustmentsHorizontalIcon className="w-[25px] h-[25px] " />
         </div>
