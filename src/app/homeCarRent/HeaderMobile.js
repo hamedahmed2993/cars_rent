@@ -14,6 +14,7 @@ import {
 export default function HeaderMobile() {
   const [openOptions, setOpenOptions] = useState(false);
   const [openSettings, setOpenSettings] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
   const searchField = useSelector((state) => state.filters.searchField);
   const dispatch = useDispatch();
   return (
@@ -40,6 +41,15 @@ export default function HeaderMobile() {
         <div className=" text-[#596780] w-[236px] h-[44px] flex items-center justify-end gap-[10px]">
           {openOptions && (
             <>
+              <div
+                className="hover:cursor-pointer"
+                onClick={() => {
+                  setOpenOptions(false);
+                  setOpenSettings(false);
+                }}
+              >
+                <img src="/icons/arrow_forward.svg"></img>
+              </div>
               {/* FAVORITE */}
               <div
                 className="w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center
@@ -79,19 +89,22 @@ export default function HeaderMobile() {
                   </ul>
                 )}
               </div>
-
               {/*=== SETTINGS ===*/}
             </>
           )}
           {/* PROFILE IMAGE */}
           <div
             onClick={() => {
-              setOpenOptions(!openOptions);
+              if (openOptions === false) {
+                setOpenOptions(true);
+              } else {
+                alert("I will open the profile");
+              }
             }}
-            className="hover:cursor-pointer w-[44px] h-[44px] border border-[#C3D4E9] rounded-full overflow-hidden flex items-center justify-center"
+            className="relative hover:cursor-pointer w-[44px] h-[44px] border border-[#C3D4E9] rounded-full overflow-hidden flex items-center justify-center"
           >
             <img
-              src="/profileIcon.jpg"
+              src="/icons/profile-2user.svg"
               alt="profile"
               className="w-full h-full object-cover"
             ></img>
