@@ -13,6 +13,7 @@ import {
 
 export default function HeaderMobile() {
   const [openOptions, setOpenOptions] = useState(false);
+  const [openSettings, setOpenSettings] = useState(false);
   const searchField = useSelector((state) => state.filters.searchField);
   const dispatch = useDispatch();
   return (
@@ -59,9 +60,26 @@ export default function HeaderMobile() {
               {/*=== NOTIFICATION ===*/}
 
               {/* SETTINGS */}
-              <div className="w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center">
+              <div
+                onClick={() => {
+                  setOpenSettings(!openSettings);
+                }}
+                className="hover:cursor-pointer relative w-[44px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-center"
+              >
                 <Cog6ToothIcon className="w-[24px] h-[24px]" />
+                {/* Dropdown List */}
+                {openSettings && (
+                  <ul className="absolute right-0 top-[20px] mt-2 w-30 bg-white border rounded shadow-md transition-all duration-200">
+                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      Dark mode
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      Languge
+                    </li>
+                  </ul>
+                )}
               </div>
+
               {/*=== SETTINGS ===*/}
             </>
           )}

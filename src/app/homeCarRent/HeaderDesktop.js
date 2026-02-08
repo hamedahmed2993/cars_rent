@@ -33,7 +33,7 @@ export default function HeaderDesktop() {
         {/*=== TITLE ===*/}
 
         {/* SEARCH BAR */}
-        <div className="text-[#596780] w-[492px] h-[44px] border border-[#C3D4E9] rounded-full flex items-center justify-between px-6">
+        <div className="text-[#596780] w-[492px] h-[44px] border border-[#C3D4E9] hover:border-[#3563E9] rounded-full flex items-center justify-between px-6">
           <div
             className="flex w-full"
             style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
